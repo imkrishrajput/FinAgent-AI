@@ -265,7 +265,7 @@ class DocumentProcessingAgent:
             ]
 
             try:
-                raw_text = chat(messages=messages, temperature=0, max_tokens=4096)
+                raw_text = chat(messages=messages, temperature=0, max_tokens=16384)
             except Exception as exc:
                 return idx, {}, f"LLM error while processing chunk {idx}/{len(chunks)}: {exc}"
 

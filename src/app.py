@@ -404,6 +404,9 @@ if uploaded_file is not None:
 
                 transactions = output["transactions"]
 
+                if output.get("error"):
+                    st.error(f"Extraction failed: {output['error']}")
+
                 engine = FinancialEngine(transactions)
 
                 analysis = engine.run()

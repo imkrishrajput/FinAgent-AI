@@ -209,9 +209,10 @@ class ConversationalFinanceAgent:
         return (
             "Financial Analysis:\n"
             + json.dumps(
-                financial_analysis,
-                indent=2,
-                ensure_ascii=False
+                analysis,
+                separators=(",", ":"),
+                ensure_ascii=False,
+                default=str
             )
             + "\n\nUser Question:\n"
             + question
